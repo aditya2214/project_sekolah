@@ -10,7 +10,7 @@
         <!-- input -->
         <div class="col-md-3">
             <div class="card">
-                <div class="card-header"> <p><b>Tambah Data Murid</b></p></div>
+                <div class="card-header"> <p><b>Tambah Data Guru</b></p></div>
                 <div class="card-body">
                     <form action="{{ url ('dashboard/data_guru/save') }}" method="post">
                         @csrf

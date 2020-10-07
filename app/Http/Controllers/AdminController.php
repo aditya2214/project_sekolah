@@ -292,7 +292,7 @@ class AdminController extends Controller
     }
 
     public function buat_tugas(){
-        $header_tugas = \App\HeaderTugas::all();
+        $header_tugas = \App\HeaderTugas::where('created_by',Auth::user()->id)->get();
         return view('admin.content.headertugas',compact('header_tugas'));
     }
 
@@ -318,4 +318,37 @@ class AdminController extends Controller
 
     }
 
+    public function open_tugas($id){
+        $open_tugas = \App\BodyTugas::where('kode',$id)->get();
+
+        return view('admin.content.bodytugas',compact('open_tugas'));
+    }
+
+
+    public function update_nilai(Request $request,$id){
+        try {
+            //code...
+            $open_tugas = \App\BodyTugas::findOrFail($id);
+            $open_tugas->nilai_tugas = $request->nilai;
+            $open_tugas->save();
+    
+            return redirect()->back()->with('success', 'Berhasil!');
+        } catch (\Throwable $th) {
+            //throw $th;
+            return redirect()->back()->with('toast_error', 'Gagal Update : Kolom Nilai Belum Di Isi');;
+
+        }
+
+    }
+
+    public function nilai_user(){
+        $data_murids = DB::table('data_murids')
+            ->join('body_tugas', 'data_murids.NISN', '=', 'body_tugas.nisn')
+            ->select('*')
+            ->get();
+
+            // return $data_murids;
+
+        return view('admin.content.nilaiuser',compact('data_murids'));
+    }
 }

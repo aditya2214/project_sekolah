@@ -44,6 +44,7 @@
             <table id="dataTable" class="table table-hover">
                 <thead>
                     <tr class="center">
+                        <th>Aksi</th>
                         <th>Kode Tugas</th>
                         <th>Kelas</th>
                         <th>Judul Tugas</th>
@@ -54,6 +55,7 @@
                 <tbody>
                     @foreach($header_tugas as $ht)
                     <tr>
+                        <td><a class="btn btn-warning" href="{{ url('dashboard/data_tugas/'.$ht->kode_tugas)}}">Lihat</a></td>
                         <td>{{$ht->kode_tugas}}</td>
                         <td>{{$ht->kelas}}</td>
                         <td>{{$ht->judul}}</td>

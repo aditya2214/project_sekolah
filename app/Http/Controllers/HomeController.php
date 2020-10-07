@@ -11,10 +11,10 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware('auth');
+    // }
 
     /**
      * Show the application dashboard.
@@ -24,6 +24,18 @@ class HomeController extends Controller
     public function index()
     {
 
-        return view('admin.content.dashboard');
+        return view('kirim-tugas');
+    }
+
+    public function save_tugas(Request $request){
+        $save_tugas = new \App\BodyTugas;
+        $save_tugas->kode = $request->kode; 
+        $save_tugas->nisn = $request->nisn;
+        $save_tugas->upload = $request->img->store('images','public');
+        $save_tugas->tgl_upload = date('Y-m-d');
+        $save_tugas->nilai_tugas = 0;
+        $save_tugas->save();
+
+        return redirect()->back()->with('success','Berhasil Di Kirim');
     }
 }

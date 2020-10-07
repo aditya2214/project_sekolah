@@ -19,7 +19,7 @@
                 </div>
                 <div class="row">
                     <div class="col-md-6">
-                        <a class="btn btn-warning btn-sm" href="{{ url ('/') }}">Home</a>
+                        <a class="btn btn-warning btn-sm" href="{{ url ('/') }}">Welcome</a>
                     </div>
                     <div class="col-md-6">
                         <a class="btn btn-danger btn-sm" href="{{ url ('logout') }}">Logout</a>

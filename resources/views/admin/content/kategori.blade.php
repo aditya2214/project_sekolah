@@ -2,15 +2,15 @@
 
 @section('content')
 <div class="container-fluid">
-    <h1 class="mt-4">Kategori</h1>
+    <h1 class="mt-4">Mata Pelajaran</h1>
     <ol class="breadcrumb mb-4">
-        <li class="breadcrumb-item active">Kategori</li>
+        <li class="breadcrumb-item active">Mata Pelajaran</li>
     </ol>
     <div class="row">
         <!-- input -->
         <div class="col-md-4">
             <div class="card">
-                <div class="card-header"> <p><b>Tambah Kategori</b></p></div>
+                <div class="card-header"> <p><b>Tambah Mata Pelajaran</b></p></div>
                 <div class="card-body">
                     <form action="{{ url ('dashboard/kategori/save') }}" method="post">
                         @csrf
