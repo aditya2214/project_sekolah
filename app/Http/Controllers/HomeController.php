@@ -28,6 +28,27 @@ class HomeController extends Controller
     }
 
     public function save_tugas(Request $request){
+        $kode = $request->kode;
+        $nisn = $request->nisn;
+
+        $data_m = \App\HeaderTugas::where('kode_tugas',$kode)->first();
+        $kls = $data_m->kelas;
+        $dt_ln = $data_m->dikumpulkan;
+
+        $data_s = \App\DataMurid::where('NISN',$nisn)->first();
+        $kls2 = $data_s->kelas->kelas;
+
+        if ($kls != $kls2) {
+            # code...
+            return redirect()->back()->with('toast_error', 'Gagal Kirim Tugas : Ini Tugas kelas '.$kls.' System mendeteksi kamu kelas '.$kls2);
+        }
+
+        $tgl= date('Y-m-d');
+        if ($tgl > $dt_ln) {
+            # code...
+            return redirect()->back()->with('toast_error', 'Batas Pengumpulan Berakhir : Silahkan Hubungi Guru!!!');
+        }
+
         $save_tugas = new \App\BodyTugas;
         $save_tugas->kode = $request->kode; 
         $save_tugas->nisn = $request->nisn;
@@ -37,5 +58,16 @@ class HomeController extends Controller
         $save_tugas->save();
 
         return redirect()->back()->with('success','Berhasil Di Kirim');
+    }
+
+
+    public function absen(){
+
+        return view('absen');
+    }
+
+    public function lihatnilai(){
+
+        return view('lihatnilai');
     }
 }

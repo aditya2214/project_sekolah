@@ -26,6 +26,14 @@
                         </select>
                         </div>
                         <div class="form-group">
+                        <select name="mapel" class="form-control" id="" required>
+                            <option selected="" disabled="" >Mapel</option>
+                            @foreach($mapel as $m)
+                            <option value="{{$m->id}}">{{$m->nama}}</option>
+                            @endforeach
+                        </select>
+                        </div>
+                        <div class="form-group">
                             <input type="text" name="judul" class="form-control" placeholder="Judul Tugas" id="" required>
                         </div>
                         <div class="form-group">
@@ -47,8 +55,9 @@
                         <th>Aksi</th>
                         <th>Kode Tugas</th>
                         <th>Kelas</th>
+                        <th>mapel</th>
                         <th>Judul Tugas</th>
-                        <th>Terakhir Dikumpulka</th>
+                        <th>Terakhir Dikumpulkan</th>
                         <th>Dibuat Oleh</th>
                     </tr>
                 </thead>
@@ -58,6 +67,7 @@
                         <td><a class="btn btn-warning" href="{{ url('dashboard/data_tugas/'.$ht->kode_tugas)}}">Lihat</a></td>
                         <td>{{$ht->kode_tugas}}</td>
                         <td>{{$ht->kelas}}</td>
+                        <th>{{$ht->mp->nama}}</th>
                         <td>{{$ht->judul}}</td>
                         <td>{{$ht->dikumpulkan}}</td>
                         <td>{{$ht->user->name}}</td>

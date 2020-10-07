@@ -7,4 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class DataMurid extends Model
 {
     //
+    public function kelas()
+    {
+        return $this->belongsTo('App\Kelas', 'id_kelas', 'id');
+    }
 }

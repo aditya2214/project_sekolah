@@ -293,7 +293,8 @@ class AdminController extends Controller
 
     public function buat_tugas(){
         $header_tugas = \App\HeaderTugas::where('created_by',Auth::user()->id)->get();
-        return view('admin.content.headertugas',compact('header_tugas'));
+        $mapel = \App\Kategori::all();
+        return view('admin.content.headertugas',compact('header_tugas','mapel'));
     }
 
     public function save_tugas(Request $request){
@@ -301,6 +302,7 @@ class AdminController extends Controller
         $d = date('d');
         $m = date('m');
         $kelas = $request->kelas;
+        $mapel = $request->mapel;
         $data = \App\HeaderTugas::whereYear('created_at',date('Y'))->whereMonth('created_at',date('m'))->count();
         $invID = str_pad(  $data + 1, 2, "0", STR_PAD_LEFT );
 
@@ -309,6 +311,7 @@ class AdminController extends Controller
         $save_tugas = new \App\HeaderTugas;
         $save_tugas->kode_tugas = $kode;
         $save_tugas->kelas = $kelas;
+        $save_tugas->mapel = $mapel;
         $save_tugas->judul = $request->judul;
         $save_tugas->dikumpulkan = $request->dikumpulkan;
         $save_tugas->created_by = Auth::user()->id;
@@ -344,11 +347,24 @@ class AdminController extends Controller
     public function nilai_user(){
         $data_murids = DB::table('data_murids')
             ->join('body_tugas', 'data_murids.NISN', '=', 'body_tugas.nisn')
-            ->select('*')
+            ->join('header_tugas','body_tugas.kode','=','header_tugas.kode_tugas')
+            ->join('kelas','data_murids.id_kelas','=','kelas.id')
+            ->select('data_murids.nama_murid',
+            'data_murids.NISN',
+            'data_murids.no_tlp',
+            'kelas.kelas',
+            'header_tugas.kode_tugas',
+            'body_tugas.nilai_tugas')
             ->get();
 
-            // return $data_murids;
+            // return $data_murids; 
+
 
         return view('admin.content.nilaiuser',compact('data_murids'));
+    }
+
+    public function absensi(){
+            $kelas = \App\Kelas::all();
+        return view('admin.content.absensi',compact('kelas'));
     }
 }

@@ -13,4 +13,9 @@ class HeaderTugas extends Model
     {
         return $this->belongsTo('App\User', 'created_by', 'id');
     }
+
+    public function mp()
+    {
+        return $this->belongsTo('App\Kategori', 'mapel', 'id');
+    }
 }

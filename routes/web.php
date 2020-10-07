@@ -24,7 +24,15 @@ Route::get('/logout', function () {
 Auth::routes();
 
 Route::get('/kirim-tugas', 'HomeController@index')->name('home');
-Route::post('/kirim-tugas/save', 'HomeController@save_tugas')->name('home');
+Route::post('/kirim-tugas/save', 'HomeController@save_tugas');
+
+Route::get('/absen', 'HomeController@absen');
+
+
+Route::get('/lihat-nilai', 'HomeController@lihatnilai');
+
+
+
 
 // Admin
 Route::get('/dashboard', 'AdminController@dashboard');
@@ -58,6 +66,8 @@ Route::get('/dashboard/data_tugas', 'AdminController@buat_tugas');
 Route::post('/dashboard/data_tugas/save', 'AdminController@save_tugas');
 Route::get('/dashboard/data_tugas/{id}', 'AdminController@open_tugas');
 Route::post('/dashboard/data_tugas/berinilai/{id}', 'AdminController@update_nilai');
-
 Route::get('/dashboard/nilai', 'AdminController@nilai_user');
+
+// absensi
+Route::get('/dashboard/absensi', 'AdminController@absensi');
 

@@ -43,12 +43,14 @@
                             <td>
                                 <input value="" type="number" class="form-control" name="nilai" id="">
                             </td>
-                            @else
-                            <td>{{$ot->nilai_tugas}}</td>
-                            @endif
                             <td>
                                 <button type="submit" class="btn btn-primary btn-sm" onclick="return confirm('Pastikan Di Check Terlebih Dahulu!')">Beri Nilai</button>
                             </td>
+                            @else
+                            <td>{{$ot->nilai_tugas}}</td>
+                            <td><span class="label label-success">Success</span></td>
+                            @endif
+                            
                         </form>
                             <td><img src="{{ asset('storage/'.$ot->upload) }}" class="thumbnail" height="100" width="100" alt=""></td>
 

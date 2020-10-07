@@ -15,7 +15,7 @@
             <nav class="sb-sidenav-menu-nested nav">
                 <a class="nav-link" href="{{ url ('dashboard/data_tugas')}}">Tugas</a>
                 <a class="nav-link" href="{{ url ('dashboard/nilai') }}">Nilai</a>
-                <a class="nav-link" href="">Absensi</a>
+                <a class="nav-link" href="{{ url ('dashboard/absensi') }}">Absensi</a>
             </nav>
         </div>
         <div class="sb-sidenav-menu-heading">Master Data</div>
