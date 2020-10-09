@@ -28,30 +28,30 @@
                     <form action="{{ url ('dashboard/data_murid/save') }}" method="post">
                         @csrf
                         <div class="form-group">
-                            <input type="text" name="namamurid" class="form-control" placeholder="Nama Murid" id="" required>
+                            <input type="text" name="namamurid" class="form-control" placeholder="Nama Murid" id="textm" required>
                         </div>
                         <div class="form-group">
-                            <input type="text" name="nisn" class="form-control" placeholder="NISN" id="" required>
+                            <input type="text" name="nisn" class="form-control" placeholder="NISN" id="nisnm" required>
                         </div>
                         <div class="form-group">
-                            <input type="text" name="nis" class="form-control" placeholder="NIS" id="" required>
+                            <input type="text" name="nis" class="form-control" placeholder="NIS" id="nism" required>
                         </div>
                         <div class="form-group">
-                            <input type="text" name="tmp_lahir" class="form-control" placeholder="Tempat Lahir" id="" required>
+                            <input type="text" name="tmp_lahir" class="form-control" placeholder="Tempat Lahir" id="tmp_lahirm" required>
                         </div>
                         <div class="form-group">
-                            <input type="date" name="tgl_lahir" class="form-control" placeholder="Tanggal Lahir" id="" required>
+                            <input type="date" name="tgl_lahir" class="form-control" placeholder="Tanggal Lahir" id="tgl_lahirm" required>
                         </div>
                         <div class="form-group">
-                            <textarea class="form-control" name="alamatmurid"  placeholder="Alamat" id="exampleFormControlTextarea1" rows="3" required></textarea>
+                            <textarea class="form-control" name="alamatmurid"  placeholder="Alamat" id="alamatmuridm" rows="3" required></textarea>
                         </div>
                         <div class="form-group">
-                            <input type="text" name="nomertlpmurid" class="form-control" placeholder="Nomor Telpon" id="" required>
+                            <input type="text" name="nomertlpmurid" class="form-control" placeholder="Nomor Telpon" id="nomertlpmuridm" required>
                         </div>
                         <div class="form-group">
-                            <input type="text" name="wali_murid" class="form-control" placeholder="Wali Murid" id="" required>
+                            <input type="text" name="wali_murid" class="form-control" placeholder="Wali Murid" id="wali_muridm" required>
                         </div>
-                        <select name="kelas" class="form-control" id="" required>
+                        <select name="kelas" class="form-control" id="kelasm" required>
                             <option selected="" disabled="" >Kelas</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -61,7 +61,7 @@
                             <option value="6">6</option>
                         </select>
                         <br>
-                        <button class="btn btn-primary btn-sm" type="submit">Simpan</button>
+                        <button class="btn btn-primary btn-sm" id="buttonm" type="submit">Simpan</button>
                     </form>
                 </div>
             </div>

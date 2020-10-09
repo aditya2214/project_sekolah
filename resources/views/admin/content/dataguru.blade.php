@@ -15,34 +15,34 @@
                     <form action="{{ url ('dashboard/data_guru/save') }}" method="post">
                         @csrf
                         <div class="form-group">
-                            <input type="text" name="nama" class="form-control" placeholder="Nama" id="" required>
+                            <input type="text" name="nama" class="form-control" placeholder="Nama" id="namag" required>
                         </div>
                         <div class="form-group">
-                            <input type="text" name="tempat_lahir" class="form-control" placeholder="Tempat Lahir" id="" required>
+                            <input type="text" name="tempat_lahir" class="form-control" placeholder="Tempat Lahir" id="tempat_lahirg" required>
                         </div>
                         <div class="form-group">
-                            <input type="date" name="tanggal_lahir" class="form-control" placeholder="Tanggal Lahir" id="" required>
+                            <input type="date" name="tanggal_lahir" class="form-control" placeholder="Tanggal Lahir" id="tanggal_lahirg" required>
                         </div>
                         <div class="form-group">
-                            <input type="text" name="nip" class="form-control" placeholder="NIP" id="" required>
+                            <input type="text" name="nip" class="form-control" placeholder="NIP" id="nipg" required>
                         </div>
                         <div class="form-group">
-                            <input type="text" name="nuptk" class="form-control" placeholder="NUPTK" id="" required>
+                            <input type="text" name="nuptk" class="form-control" placeholder="NUPTK" id="nuptkg" required>
                         </div>
                         <div class="form-group">
-                            <input type="text" name="no_hp" class="form-control" placeholder="No. Hp" id="" required>
+                            <input type="text" name="no_hp" class="form-control" placeholder="No. Hp" id="no_hpg" required>
                         </div>
                         <div class="form-group">
-                            <textarea class="form-control" name="alamat" placeholder="Alamat" id="exampleFormControlTextarea1" rows="3" required></textarea>
+                            <textarea class="form-control" name="alamat" placeholder="Alamat" id="alamatg" rows="3" required></textarea>
                         </div>
                         <div class="form-group">
-                            <input type="text" name="pangkat" class="form-control" placeholder="Pangkat, Gol. Ruang" id="" required>
+                            <input type="text" name="pangkat" class="form-control" placeholder="Pangkat, Gol. Ruang" id="pangkatg" required>
                         </div>
                         <div class="form-group">
-                            <input type="text" name="masa_kerja" class="form-control" placeholder="Masa Kerja" id="" required>
+                            <input type="text" name="masa_kerja" class="form-control" placeholder="Masa Kerja" id="masa_kerjag" required>
                         </div>
                         <br>
-                        <button class="btn btn-primary btn-sm" type="submit">Simpan</button>
+                        <button class="btn btn-primary btn-sm" id="buttong" type="submit">Simpan</button>
                     </form>
                 </div>
             </div>

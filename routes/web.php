@@ -66,6 +66,7 @@ Route::get('/dashboard/data_tugas', 'AdminController@buat_tugas');
 Route::post('/dashboard/data_tugas/save', 'AdminController@save_tugas');
 Route::get('/dashboard/data_tugas/{id}', 'AdminController@open_tugas');
 Route::post('/dashboard/data_tugas/berinilai/{id}', 'AdminController@update_nilai');
+Route::post('/dashboard/data-tugas/deleteAll', 'AdminController@delete_all');
 Route::get('/dashboard/nilai', 'AdminController@nilai_user');
 
 // absensi

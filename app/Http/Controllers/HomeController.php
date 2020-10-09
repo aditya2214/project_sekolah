@@ -23,8 +23,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-
-        return view('kirim-tugas');
+        $head = \App\HeaderTugas::all();
+        return view('kirim-tugas',compact('head'));
     }
 
     public function save_tugas(Request $request){
@@ -40,7 +40,7 @@ class HomeController extends Controller
 
         if ($kls != $kls2) {
             # code...
-            return redirect()->back()->with('toast_error', 'Gagal Kirim Tugas : Ini Tugas kelas '.$kls.' System mendeteksi kamu kelas '.$kls2);
+            return redirect()->back()->with('toast_error', 'Gagal Kirim Tugas : Ini Tugas kelas '.$kls.', kamu kelas '.$kls2.'!! tolong cek kembali kode tugasnya!!!');
         }
 
         $tgl= date('Y-m-d');

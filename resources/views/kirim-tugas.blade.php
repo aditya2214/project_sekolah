@@ -10,8 +10,14 @@
                     <form action="{{url ('kirim-tugas/save') }}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
-                        <input type="text" name="kode" class="form-control" placeholder="Masuk Kode Tugas">
+                        <select class="form-control select2" id="kode" name="kode" required>
+                            <option selected="" disabled="" >Judul Tugas</option>
+                            @foreach($head as $h)
+                            <option value="{{$h->kode_tugas}}">{{$h->judul}}</option>
+                            @endforeach
+                        </select>
                     </div>
+
                     <div class="form-group">
                         <input type="text" name="nisn" class="form-control" placeholder="NISN">
                     </div>

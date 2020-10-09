@@ -1,39 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" class="no-js">
 <head>
-
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-
-  <title>Selamat Datang</title>
-
-  <!-- Bootstrap Core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Custom Fonts -->
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
-  <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
-
-  <!-- Custom CSS -->
-  <link href="css/stylish-portfolio.min.css" rel="stylesheet">
-    <style>
-        body {
-        background-image: url("{{ asset ('test_img/bg.gif') }}");
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-position: center;
-      }
-    </style>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Welcome</title>
+    <link href="https://fonts.googleapis.com/css?family=Heebo:400,700|Oxygen:700" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset ('welcome/dist/css/style.css') }}">
+    <script src="https://unpkg.com/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
 </head>
+<body class="is-boxed has-animations">
+    <div class="body-wrap boxed-container">
+        <header class="site-header text-light">
+            <div class="container">
+                <div class="site-header-inner">
+                    <div class="brand header-brand">
+                        <h1 class="m-0">
+                            <a href="#">
+								              <img class="header-logo-image" src="{{ asset('../public/welcome/dist/images/logo.svg') }}" alt="Logo">
+                            </a>
+                        </h1>
+                    </div>
+                </div>
+            </div>
+        </header>
 
-<body>
+        <main>
+            <section class="hero text-center text-light">
+				<div class="hero-bg"></div>
+				<div class="hero-particles-container">
+					<canvas id="hero-particles"></canvas>
+				</div>
+                <div class="container-sm">
+                    <div class="hero-inner">
+						<div class="hero-copy">
+	                        <h1 class="hero-title mt-0">SDN KIARA</h1>
+	                        <p class="hero-paragraph">Kegiatan Kesiswaan kini bisa online</p>
+	                        <div class="hero-cta">
+								<a class="button button-primary button-wide-mobile" href="{{ url ('kirim-tugas') }}">Start  </a>
+							</div>
+						</div>
+						<div class="mockup-container">
+							<div class="mockup-bg">
+								<img src="{{ asset ('../public/welcome/dist/images/iphone-hero-bg.svg') }}" alt="iPhone illustration">
+							</div>
+							<img class="device-mockup" src="{{ asset ('../public/welcome/dist/images/iphone-hero.png') }}" alt="iPhone Hero">
+						</div>
+                    </div>
+                </div>
+            </section>
+      </main>
 
-    <h1 style="position:absolute;left:500px;top:500px;font-size: 200px;"><a href="{{ url ('kirim-tugas') }}">Start</a> </h1>
-
+    <script src="{{ asset ('welcome/dist/js/main.min.js') }}"></script>
 </body>
-
 </html>

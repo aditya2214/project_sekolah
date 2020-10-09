@@ -52,7 +52,7 @@
                             @endif
                             
                         </form>
-                            <td><img src="{{ asset('storage/'.$ot->upload) }}" class="thumbnail" height="100" width="100" alt=""></td>
+                            <td><img src="{{ asset('../public/storage/'.$ot->upload) }}" class="thumbnail" height="100" width="100" alt=""></td>
 
                     </tr>
                     @endforeach

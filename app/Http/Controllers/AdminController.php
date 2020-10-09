@@ -367,4 +367,21 @@ class AdminController extends Controller
             $kelas = \App\Kelas::all();
         return view('admin.content.absensi',compact('kelas'));
     }
+
+    public function delete_all(Request $request){
+        try {
+            //code...
+            $kodes = $request->kode_tugas;
+            // return $kodes;
+            $header = \App\HeaderTugas::whereIn('kode_tugas',$kodes)->delete();
+            $body = \App\BodyTugas::whereIn('kode',$kodes)->delete();
+    
+            return redirect()->back()->with('success', 'Berhasil!');
+        } catch (\Exception $e) {
+            //throw $th;
+            return view('error',compact('e'));
+        }
+     
+
+    }
 }
