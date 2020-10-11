@@ -13,7 +13,7 @@
                 position:relative;
                 top:-25px;
                 left:-35px;
-                width:500px;
+                width:1000px;
                 height:auto;
                 display:block;
                 z-index:999;
@@ -39,6 +39,7 @@
                         <td>{{$ot->tgl_upload}}</td>
                         <form action="{{ url('dashboard/data_tugas/berinilai/'.$ot->id) }}" method="post">
                         @csrf
+                        <td><img src="{{ asset('../public/storage/'.$ot->upload) }}" class="thumbnail" height="100" width="100" alt=""></td>
                             @if($ot->nilai_tugas == 0)
                             <td>
                                 <input value="" type="number" class="form-control" name="nilai" id="">
@@ -52,8 +53,6 @@
                             @endif
                             
                         </form>
-                            <td><img src="{{ asset('../public/storage/'.$ot->upload) }}" class="thumbnail" height="100" width="100" alt=""></td>
-
                     </tr>
                     @endforeach
                 </tbody>

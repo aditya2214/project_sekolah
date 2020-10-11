@@ -10,16 +10,16 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <!-- <script src="{{ asset('js/app.js') }}" defer></script> -->
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Styles -->
+    <link href="{{ asset('select2/dist/css/select2.min.css') }}" rel="stylesheet" />
+    <!-- CSS bootstrap -->
+    <link rel="stylesheet" href="{{ asset ('bo/dist/css/bootstrap.min.css') }}" >    <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/dataTables.bootstrap4.min.css') }}" rel="stylesheet">
+
     <style>
         body {
             background-color: lightblue;
@@ -29,12 +29,11 @@
 <body>
     @include('sweetalert::alert')
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="">
             <div class="container">
                 <div class="row">
-                    <div class="btn-group"  style="overflow-x:auto;">
+                    <div class="btn-group">
                         <a href="{{ url('/') }}"  class="btn btn-danger  btn-block"><i class="fas fa-arrow-alt-circle-left"></i><br> Welcome</a>
-                        <hr>
                         <a href="#"  class="btn btn-warning"><i class="fas fa-book"></i><br> Baca Buku</a>
                         <a href="{{ url ('/kirim-tugas') }}"  class="btn btn-primary"><i class="fas fa-chart-area"></i><br> Kirim Tugas</a>
                         <a href="{{ url ('/lihat-nilai') }}" class="btn btn-success"><i class="fas fa-heart"></i><br> Nilai</a>
@@ -50,7 +49,18 @@
         </main>
     </div>
 </body>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+<!-- JS, Popper.js, and jQuery -->
+<script src="{{ asset ('js/jquery-3.5.1.slim.min.js') }}"></script>
+<script src="{{ asset ('js/popper.min.js') }}"></script>
+<script src="{{ asset ('bo/dist/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset ('js/all.min.js') }}"></script>
+<script src="{{ asset ('select2/dist/js/select2.min.js') }}"></script>
+<script src="{{ asset ('js/jquery.dataTables.min.js') }}"></script>
+<script src="{{ asset ('js/dataTables.bootstrap4.min.js') }}"></script>
+<script src="{{ asset ('admin/dist/assets/demo/datatables-demo.js') }}"></script>
+<script>
+$(document).ready(function() {
+    $('.select2').select2();
+});
+</script>
 </html>

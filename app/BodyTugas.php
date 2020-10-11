@@ -13,4 +13,9 @@ class BodyTugas extends Model
     {
         return $this->belongsTo('App\DataMurid', 'nisn', 'NISN');
     }
+
+    public function tugas()
+    {
+        return $this->belongsTo('App\HeaderTugas', 'kode', 'kode_tugas');
+    }
 }

@@ -19,9 +19,9 @@
                             <div class="col-lg-6">
                                 <div class="text-center mt-4">
                                     <h1 class="display-1">Ups..</h1>
-                                    <p class="lead">Process</p>
-                                    <p>{{$e}}</p>
-                                    <a href="{{ url ('dashboard') }}">
+                                    <p class="lead">Mohon maaf ada kesalahan!!! </p>
+                                    Ini pesannya...<p style="color:red;">{{$e}}</p>
+                                    <a class="btn btn-primary btn-sm" href="{{ url ('kirim-tugas') }}">
                                         <i class="fas fa-arrow-left mr-1"></i>
                                         Return to Dashboard
                                     </a>

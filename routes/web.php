@@ -30,6 +30,7 @@ Route::get('/absen', 'HomeController@absen');
 
 
 Route::get('/lihat-nilai', 'HomeController@lihatnilai');
+Route::post('/lihat-nilai/check', 'HomeController@checknilai');
 
 
 

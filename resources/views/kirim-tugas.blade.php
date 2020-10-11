@@ -19,10 +19,10 @@
                     </div>
 
                     <div class="form-group">
-                        <input type="text" name="nisn" class="form-control" placeholder="NISN">
+                        <input type="text" name="nisn" class="form-control" placeholder="NISN" required>
                     </div>
                     <div style="text-align:center" class="form-group">
-                        <input type="file"  name="img" class="form-control" placeholder="Ipload Tugas">
+                        <input type="file"  name="img" class="form-control" required >
                     </div>
                 </div>
                 <div class="card-footer">

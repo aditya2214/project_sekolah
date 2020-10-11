@@ -8,8 +8,8 @@
         <meta name="author" content="" />
         <title>Dashboard - SB Admin</title>
         <link href="{{ asset ('admin/dist/css/styles.css') }}" rel="stylesheet" />
-        <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous"></script>
+        <link href="{{ asset('css/dataTables.bootstrap4.min.css') }}" rel="stylesheet">
+        <script src="{{ asset ('js/all.min.js') }}"></script>
     </head>
     <body class="sb-nav-fixed">
         @include('sweetalert::alert')
@@ -44,12 +44,12 @@
                 </footer>
             </div>
         </div>
-        <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="{{ asset ('js/jquery-3.5.1.slim.min.js') }}"></script>
+        <script src="{{ asset ('bo/dist/js/bootstrap.bundle.min.js')}}" crossorigin="anonymous"></script>
         <script src="{{ asset ('admin/dist/js/scripts.js') }}"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
-        <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
-        <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
+        <script src="{{ asset ('admin/dist/js/Chart.min.js') }}"></script>
+        <script src="{{ asset ('js/jquery.dataTables.min.js') }}"></script>
+        <script src="{{ asset ('js/dataTables.bootstrap4.min.js') }}"></script>
         <script src="{{ asset ('admin/dist/assets/demo/datatables-demo.js') }}"></script>
         @yield('script')
     </body>

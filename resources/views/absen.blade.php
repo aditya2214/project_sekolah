@@ -10,7 +10,7 @@
                     <form action="{{url ('kirim-tugas/save') }}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
-                        <input type="text" name="nisn" class="form-control" placeholder="NISN">
+                        <input type="text" name="nisn" class="form-control" placeholder="NISN" required>
                     </div>
                 </div>
                 <div class="card-footer">

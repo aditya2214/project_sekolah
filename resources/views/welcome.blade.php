@@ -5,11 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Welcome</title>
-    <link href="https://fonts.googleapis.com/css?family=Heebo:400,700|Oxygen:700" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset ('welcome/dist/css/style.css') }}">
-    <script src="https://unpkg.com/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
+    <script src="{{ asset ('welcome/dist/js/scrollreveal.min.js') }}"></script>
+    <style type="text/css">
+    .preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background-color: #fff;
+    }
+    .preloader .loading {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    font: 14px arial;
+    }
+    </style>
 </head>
 <body class="is-boxed has-animations">
+<div class="preloader">
+  <div class="loading">
+    <img src="test_img/poi.gif" width="100%">
+  </div>
+</div>
     <div class="body-wrap boxed-container">
         <header class="site-header text-light">
             <div class="container">
@@ -52,5 +74,11 @@
       </main>
 
     <script src="{{ asset ('welcome/dist/js/main.min.js') }}"></script>
+    <script src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+        $(".preloader").fadeOut();
+        })
+    </script>
 </body>
 </html>
